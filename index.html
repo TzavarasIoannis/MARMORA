@@ -164,8 +164,11 @@ nav a:hover::after {
 }
 
 .section-box {
+ 
   text-align: center;
   position: relative;
+  overflow: hidden; /* This is key */
+  max-width: 300px;
   
 }
 
@@ -177,11 +180,16 @@ nav a:hover::after {
   
 }
     .section-boxes img {
-      width: 300px;
-      height: 250px;
+       width: 100%;
+        max-width: 300px;
+      height: auto;
       object-fit: cover;
       cursor: pointer;
       transition: transform 0.3s ease;
+ 
+  display: block;
+  z-index: 1;
+  position: relative;
     }
     .section-boxes a {
   display: inline-block;
@@ -284,8 +292,8 @@ nav a:hover::after {
       padding: 30px;
     }
     footer .logo-footer {
-      max-width: 100px;
-       margin-right: 40px;
+      max-width: 60px;
+  height: auto;
     }
     footer ul {
       list-style: none;
@@ -334,16 +342,16 @@ nav a:hover::after {
   
 
   /* Nav adjustments */
-  nav {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
+nav {
+  flex-direction: column;
+  align-items: center;
+}
 
-  .nav-left, .nav-right {
-    flex: none;
-    justify-content: center;
-    gap: 10px;
-  }
+.nav-left, .nav-right {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
 
   .nav-logo img {
     height: 60px;
@@ -360,6 +368,9 @@ nav a:hover::after {
   .section-title, .slider-title {
     font-size: 1.5em;
   }
+}
+    .logo-footer img {
+  max-width: 40px;
 }
 
   </style>
