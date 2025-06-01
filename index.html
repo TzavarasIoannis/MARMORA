@@ -39,6 +39,7 @@
   font-weight: bold;
   font-size: 20px;
   background: #f2f2f2; 
+  flex-wrap: wrap; 
 }
     nav a  {
   position: relative;
@@ -124,13 +125,14 @@ nav a:hover::after {
   transform-origin: left;
   transform: scaleX(1);
 }
-    .logo {
-      position: absolute;
-      top: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-    }
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* Higher than nav */
+}
+
     .logo img {
       max-height: 100px;
       width: auto;
@@ -170,12 +172,39 @@ nav a:hover::after {
   color: #333;
 }
     .section-boxes img {
-      width: 250px;
-      height: 150px;
+      width: 300px;
+      height: 220px;
       object-fit: cover;
       cursor: pointer;
       transition: transform 0.3s ease;
     }
+    .section-boxes a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  margin-top: 10px;
+}
+    
+.section-boxes a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+    .section-boxes a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+    
     .section-boxes img:hover {
       transform: scale(1.05);
     }
@@ -193,9 +222,10 @@ nav a:hover::after {
        
     }
     .slider-images img {
-      width: 1000px;
-      height: 400px;
-      object-fit: cover;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  object-fit: cover;
     }
 
 
@@ -277,6 +307,8 @@ nav a:hover::after {
     max-width: 100%;
     gap: 15px;
     margin: 30px 10px;
+   align-items: center;
+
   }
 
   /* Make images full width and maintain aspect ratio */
@@ -284,12 +316,17 @@ nav a:hover::after {
     width: 100%;
     height: auto;
   }
+    .slider-images {
+    flex-direction: column;
+    align-items: center;
+  }
 
   /* Resize slider images for smaller screens */
   .slider-images img {
-    width: 100%;
+    width: 90vw;
     height: auto;
   }
+  
 
   /* Nav adjustments */
   nav {
@@ -350,19 +387,24 @@ nav a:hover::after {
   <section class="section-boxes">
   <div class="section-box">
     <h3>Kitchen</h3>
-    <a href="projects.html"><img src="assets/img1.jpg" alt="Project 1"></a>
-    <a class="explore-link" href="projects.html">EXPLORE</a>
-
+     <a href="projects.html">
+        <img src="assets/img2.jpg" alt="Project 2">
+          <div>EXPLORE</div>
+        </a>
   </div>
   <div class="section-box">
     <h3>Bathroom</h3>
-    <a href="projects.html"><img src="assets/img2.jpg" alt="Project 2"></a>
-     <a class="explore-link" href="projects.html">EXPLORE</a>
+      <a href="projects.html">
+        <img src="assets/img2.jpg" alt="Project 2">
+          <div>EXPLORE</div>
+        </a>
   </div>
   <div class="section-box">
     <h3>Fireplace</h3>
-    <a href="projects.html"><img src="assets/img3.jpg" alt="Project 3"></a>
-     <a class="explore-link" href="projects.html">EXPLORE</a>
+      <a href="projects.html">
+        <img src="assets/img2.jpg" alt="Project 2">
+          <div>EXPLORE</div>
+        </a>
   </div>
 </section>
 
