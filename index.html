@@ -84,16 +84,14 @@
       transform: scale(1.05);
     }
     .slider {
-      margin: 50px auto;
-      max-width: 1000px;
-      overflow: hidden;
-      overflow-x: auto;
-      white-space: nowrap;
-      
-    }
+  margin: 50px auto;
+  max-width: 1000px;
+  overflow-x: hidden;
+  position: relative;
+}
     .slider-images {
       display: flex;
-      gap: 20px;
+      gap: 15px;
       white-space: nowrap;
       overflow-x: auto;
        
@@ -179,27 +177,31 @@
   </footer>
 
 
-  <script>
+ <script>
   const slider = document.querySelector('.slider');
   const sliderImages = document.querySelector('.slider-images');
 
-  // Clone the slider images to create a seamless infinite scroll effect
+  // Clone the images once for seamless loop
   sliderImages.innerHTML += sliderImages.innerHTML;
 
   let scrollAmount = 0;
-  const scrollSpeed = 1; // pixels per frame, adjust for speed
+  const scrollSpeed = 0.3; // Lower = slower
 
   function scrollSlider() {
     scrollAmount += scrollSpeed;
+
+    // Reset scroll when half of scrollWidth is passed (original + clone)
     if (scrollAmount >= sliderImages.scrollWidth / 2) {
       scrollAmount = 0;
     }
+
     slider.scrollLeft = scrollAmount;
     requestAnimationFrame(scrollSlider);
   }
 
   scrollSlider();
 </script>
+
 
 </body>
 </html>
