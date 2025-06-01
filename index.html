@@ -172,5 +172,29 @@
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
   </footer>
+
+
+  <script>
+  const slider = document.querySelector('.slider');
+  const sliderImages = document.querySelector('.slider-images');
+
+  // Clone the slider images to create a seamless infinite scroll effect
+  sliderImages.innerHTML += sliderImages.innerHTML;
+
+  let scrollAmount = 0;
+  const scrollSpeed = 1; // pixels per frame, adjust for speed
+
+  function scrollSlider() {
+    scrollAmount += scrollSpeed;
+    if (scrollAmount >= sliderImages.scrollWidth / 2) {
+      scrollAmount = 0;
+    }
+    slider.scrollLeft = scrollAmount;
+    requestAnimationFrame(scrollSlider);
+  }
+
+  scrollSlider();
+</script>
+
 </body>
 </html>
