@@ -27,7 +27,7 @@
     }
     nav {
   position: fixed;
-  top: 50px;
+  top: 0px;
   width: 100%;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -64,16 +64,33 @@ nav:hover {
   margin: 0 40px;
 }
 
-    nav a {
-      margin: 0 25px;
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-      transition: text-decoration 0.3s ease;
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding-bottom: 3px; /* space for underline */
+}
 
-    }
+nav a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: black;
+  bottom: 0;
+  right: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
     nav a:hover {
   text-decoration: underline;
+}
+    
+nav a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
 }
     .logo {
       position: absolute;
@@ -256,7 +273,7 @@ nav:hover {
 
   </header>
 
-  <div class="quote-top">"Born from the earth. Built to endure."</div>
+  <div class="quote-top">“Born from the earth. Built to endure” </div>
   <div class="section-title">Explore Collections</div>
   <section class="section-boxes">
   <div class="section-box">
@@ -273,7 +290,7 @@ nav:hover {
   </div>
 </section>
 
-  <div class="quote-bottom">"Sculpted for those who seek the extraordinary"</div>
+  <div class="quote-bottom">“Sculpted for those who seek the extraordinary”</div>
 
   <div class="slider-title">Navigate our projects</div>
   <section class="slider">
@@ -286,7 +303,7 @@ nav:hover {
 
   <footer>
     <div class="logo-footer">
-      <img src="LOGO.png" alt="Company Logo" />
+      <img src="LOGO.jpg" alt="Company Logo" />
     </div>
     <ul>
       <li><a href="index.html">Home</a></li>
