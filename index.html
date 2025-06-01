@@ -47,7 +47,7 @@ nav:hover {
 
 .nav-left, .nav-right {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   color: black;
   flex: 1; 
 }
@@ -69,7 +69,12 @@ nav:hover {
       color: black;
       font-weight: bold;
       text-decoration: none;
+      transition: text-decoration 0.3s ease;
+
     }
+    nav a:hover {
+  text-decoration: underline;
+}
     .logo {
       position: absolute;
       top: 15px;
@@ -169,6 +174,61 @@ nav:hover {
       color: white;
       text-decoration: none;
     }
+
+
+
+
+    /* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  /* Stack section boxes vertically with smaller gaps */
+  .section-boxes {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 15px;
+    margin: 30px 10px;
+  }
+
+  /* Make images full width and maintain aspect ratio */
+  .section-boxes img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Resize slider images for smaller screens */
+  .slider-images img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Nav adjustments */
+  nav {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .nav-left, .nav-right {
+    flex: none;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-logo img {
+    height: 60px;
+    margin: 0 20px;
+  }
+  
+  /* Adjust quote font size and padding for smaller devices */
+  .quote-top, .quote-bottom {
+    font-size: 1.1em;
+    margin: 15px 10px;
+  }
+
+  /* Adjust section and slider titles font size */
+  .section-title, .slider-title {
+    font-size: 1.5em;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -185,9 +245,9 @@ nav:hover {
     <a href="projects.html">Projects</a>
     <a href="showroom.html">Showroom</a>
   </div>
-  <div class="nav-logo">
-    <img src="assets/logo.jpg" alt="Logo" />
-  </div>
+/*  <div class="nav-logo"> */
+   /* <img src="assets/logo.jpg" alt="Logo" /> */
+ /* </div> */
   <div class="nav-right">
     <a href="ideas.html">Ideas</a>
     <a href="contact.html">Contact Us</a>
@@ -200,15 +260,15 @@ nav:hover {
   <div class="section-title">Explore Collections</div>
   <section class="section-boxes">
   <div class="section-box">
-    <h3>Title 1</h3>
+    <h3>Kitchen</h3>
     <a href="projects.html"><img src="assets/img1.jpg" alt="Project 1"></a>
   </div>
   <div class="section-box">
-    <h3>Title 2</h3>
+    <h3>Bathroom</h3>
     <a href="projects.html"><img src="assets/img2.jpg" alt="Project 2"></a>
   </div>
   <div class="section-box">
-    <h3>Title 3</h3>
+    <h3>Fireplace</h3>
     <a href="projects.html"><img src="assets/img3.jpg" alt="Project 3"></a>
   </div>
 </section>
