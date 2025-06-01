@@ -26,18 +26,36 @@
       z-index: -1;
     }
     nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      padding: 10px;
-      text-align: center;
-      z-index: 3;
-    }
-    nav:hover {
-      opacity: 1;
-    }
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 15px 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  background: none; /* no background */
+}
+
+nav:hover {
+  opacity: 1;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  gap: 20px;
+  color: black;
+}
+
+.nav-logo img {
+  height: 50px;
+  margin: 0 40px;
+}
+
     nav a {
       margin: 0 15px;
       color: black;
@@ -60,6 +78,7 @@
       font-style: italic;
       font-size: 1.2em;
       margin: 20px auto;
+      font-weight: bold;
     }
     .section-title, .slider-title {
       text-align: center;
@@ -106,7 +125,7 @@
       100% { transform: translateX(-3060px); }
     }
     footer {
-      background: #111;
+      background: #888;
       color: white;
       display: flex;
       justify-content: space-between;
@@ -131,18 +150,26 @@
 <body>
   <header>
     <video class="bg-video" autoplay muted loop>
-      <source src="assets/your-video.mp4" type="video/mp4" />
+      <source src="assets/SMALLFILE.mp4" type="video/mp4" />
     </video>
     <div class="logo">
       <img src="assets/LOGO.jpg" alt="Company Logo" />
     </div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="showroom.html">Showroom</a>
-      <a href="ideas.html">Ideas</a>
-      <a href="contact.html">Contact Us</a>
-    </nav>
+  <div class="nav-left">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="showroom.html">Showroom</a>
+  </div>
+  <div class="nav-logo">
+    <img src="assets/logo.jpg" alt="Logo" />
+  </div>
+  <div class="nav-right">
+    <a href="ideas.html">Ideas</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</nav>
+
   </header>
 
   <div class="quote-top">"Born from the earth. Built to endure."</div>
