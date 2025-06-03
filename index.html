@@ -31,7 +31,7 @@
   width: 100%;
   opacity: 0;
   transition: opacity 0.3s ease;
-  padding: 70px 10px 15px;
+  padding: 60px 10px 15px;
   z-index: 9;
   display: flex;
   align-items: center;
@@ -83,15 +83,10 @@ nav:hover {
   gap: 12px;
   color: black;
   flex: 1; 
-}
-    .nav-left {
-  justify-content: flex-start;
-}
+    justify-content: flex-start;
 
-.nav-right {
-  justify-content: flex-end;
 }
-
+     
 .nav-logo img {
   height: 100px;
   margin: 0 40px;
@@ -293,7 +288,7 @@ nav a:hover::after {
       padding: 30px;
     }
     footer .logo-footer {
-      max-width: 150px;
+      max-width: 250px;
       height: auto;
     }
     footer ul {
@@ -314,6 +309,15 @@ nav a:hover::after {
 
 
     /* Responsive styles for smaller screens */
+
+
+
+
+
+
+
+
+    
 @media (max-width: 768px) {
   /* Stack section boxes vertically with smaller gaps */
   .section-boxes {
@@ -351,7 +355,7 @@ nav a:hover::after {
 nav {
   flex-direction: column;
   align-items: center;
-}
+ }
 
 .nav-left, .nav-right {
   flex-direction: column;
@@ -376,7 +380,8 @@ nav {
   }
 }
     .logo-footer img {
-  max-width: 40px;
+  max-width: 80px;
+        height: auto;    
 }
 
   </style>
@@ -395,7 +400,10 @@ nav {
     <a href="projects.html">Projects</a>
     <a href="showroom.html">Showroom</a>
   </div>
- 
+  </div>
+  <div class="nav-logo">
+    <img src="assets/LOGO.jpg" alt="Company Logo" />
+  </div>
   <div class="nav-right">
     <a href="ideas.html">Ideas</a>
     <a href="contact.html">Contact Us</a>
