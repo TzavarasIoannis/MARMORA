@@ -31,7 +31,7 @@
   width: 100%;
   opacity: 0;
   transition: opacity 0.3s ease;
-  padding: 60px 10px 15px;
+  padding: 60px 30px 15px;
   z-index: 9;
   display: flex;
   align-items: center;
@@ -88,8 +88,8 @@ nav:hover {
 }
      
 .nav-logo img {
-  height: 100px;
-  margin: 0 40px;
+  height: 60px;
+  width: auto;
 }
 
 nav a {
@@ -334,7 +334,19 @@ nav a:hover::after {
       text-decoration: none;
     }
 
+/* Large top logo */
+.logo-top {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
 
+.logo-top img {
+  max-height: 200px;
+  width: auto;
+}
 
 
     /* Responsive styles for smaller screens */
@@ -393,7 +405,7 @@ nav {
 }
 
   .nav-logo img {
-    height: 60px;
+    height: 80px;
     margin: 0 20px;
   }
   
@@ -409,9 +421,12 @@ nav {
   }
 }
     .logo-footer img {
-  max-width: 80px;
+  max-width: 140px;
         height: auto;    
 }
+      .logo-top img {
+    max-height: 120px;
+  }
 
   </style>
 </head>
@@ -420,10 +435,10 @@ nav {
     <video class="bg-video" autoplay muted loop>
       <source src="assets/SMALLFILE.mp4" type="video/mp4" />
     </video>
-    <div class="logo">
+    <div class="logo-top">
       <img src="assets/LOGO.jpg" alt="Company Logo" />
     </div>
-    <nav>
+<nav>
   <div class="nav-left">
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
@@ -431,13 +446,13 @@ nav {
   </div>
   </div>
   <div class="nav-logo">
-    <img src="assets/LOGO.jpg" alt="Company Logo" />
+    <img src="assets/LOGO.jpg" alt=" Navbar Company Logo" />
   </div>
   <div class="nav-right">
     <a href="ideas.html">Ideas</a>
     <a href="contact.html">Contact Us</a>
   </div>
-</nav>
+ </nav>
 
   </header>
 
