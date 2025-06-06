@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ideas | MARMORA</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      background-color: #fff;
+    }
+
+    /* NAVBAR (SAME AS HOMEPAGE) */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #f2f2f2;
+      padding: 20px 30px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .nav-section {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-logo img {
+      height: 80px;
+      width: auto;
+      pointer-events: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: black;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* CONTENT SECTIONS */
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 50px;
+      gap: 50px;
+    }
+
+    .section:nth-child(even) {
+      flex-direction: row-reverse;
+      background-color: #f9f9f9;
+    }
+
+    .section img {
+      width: 40%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .section .text {
+      width: 50%;
+      font-size: 18px;
+      color: #333;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+        padding: 100px 20px;
+      }
+
+      .section:nth-child(even) {
+        flex-direction: column;
+      }
+
+      .section img, .section .text {
+        width: 100%;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav-logo img {
+        height: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-section nav-left">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="showroom.html">Showroom</a>
+      </div>
+      <div class="nav-logo">
+        <img src="assets/LOGO.jpg" alt="Marmora Logo" />
+      </div>
+      <div class="nav-section nav-right">
+        <a href="ideas.html">Ideas</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed navbar -->
+  <div style="height: 140px;"></div>
+
+  <!-- Section 1 -->
+  <div class="section">
+    <img src="assets/idea1.jpg" alt="Idea 1">
+    <div class="text">
+      <h2>Natural Harmony</h2>
+      <p>
+        Inspired by organic forms and soft finishes, this concept blends raw marble with modern interiors. The texture tells a story of time, nature, and calm elegance.
+      </p>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section">
+    <img src="assets/idea2.jpg" alt="Idea 2">
+    <div class="text">
+      <h2>Architectural Precision</h2>
+      <p>
+        A bold take on structure and geometry. This visual explores how precision-cut stone meets futuristic aesthetics. Think bold lines and timeless material.
+      </p>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section">
+    <img src="assets/idea3.jpg" alt="Idea 3">
+    <div class="text">
+      <h2>Urban Escape</h2>
+      <p>
+        Bringing natural textures into the city—this concept bridges rustic tradition with minimal design, perfect for urban homes or boutique commercial spaces.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 MARMORA. All rights reserved.
+  </footer>
+
+</body>
+</html>
