@@ -9,149 +9,85 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #fff;
-      scroll-behavior: smooth;
     }
 
-    /* NAVBAR */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
       background: #f2f2f2;
-      padding: 20px 30px;
       z-index: 1000;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
+      padding: 20px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-
-    .nav-section {
+    .nav-left, .nav-right {
       display: flex;
       gap: 20px;
-    }
-
-    .nav-logo img {
-      height: 80px;
-      width: auto;
-      pointer-events: none;
     }
 
     nav a {
       text-decoration: none;
       color: black;
       font-weight: bold;
-      font-size: 18px;
-      position: relative;
-      padding-bottom: 3px;
     }
 
-    nav a::after {
-      content: "";
-      position: absolute;
-      height: 2px;
-      width: 100%;
-      background: black;
-      bottom: 0;
-      left: 0;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.3s ease;
+    .nav-logo img {
+      height: 60px;
     }
 
-    nav a:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    /* SPACER */
-    .spacer {
-      height: 140px;
-    }
-
-    /* CONTACT FORM */
     .contact-container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .contact-container h2 {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 30px;
-    }
-
-    .contact-form {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
+      flex-wrap: wrap;
+      padding: 120px 40px 40px;
+      gap: 40px;
+      justify-content: center;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-      padding: 15px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      resize: none;
+    .map-box {
+      flex: 1 1 400px;
+      min-height: 400px;
     }
 
-    .contact-form button {
-      padding: 15px;
-      font-size: 18px;
-      background-color: black;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .contact-form button:hover {
-      background-color: #333;
-    }
-
-    /* MAP SECTION */
-    .map-container {
-      margin-top: 40px;
-      height: 400px;
-      width: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    iframe {
+    .map-box iframe {
       width: 100%;
       height: 100%;
       border: 0;
     }
 
-    /* FOOTER */
+    .info-box {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    .info-box a {
+      color: black;
+      text-decoration: none;
+    }
+
     footer {
-      background-color: #f2f2f2;
+      background: #f2f2f2;
       text-align: center;
-      padding: 40px 20px;
-      font-size: 16px;
-      color: #555;
+      padding: 30px;
+      margin-top: 40px;
+    }
+
+    footer .logo-footer img {
+      max-width: 140px;
+      height: auto;
     }
 
     @media (max-width: 768px) {
-      .nav-container {
+      .contact-container {
         flex-direction: column;
-        gap: 20px;
-      }
-
-      .nav-logo img {
-        height: 60px;
+        padding: 100px 20px 40px;
       }
     }
   </style>
@@ -160,48 +96,50 @@
 
   <!-- Navbar -->
   <nav>
-    <div class="nav-container">
-      <div class="nav-section nav-left">
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="showroom.html">Showroom</a>
-      </div>
-      <div class="nav-logo">
-        <img src="assets/LOGO.jpg" alt="Marmora Logo" />
-      </div>
-      <div class="nav-section nav-right">
-        <a href="ideas.html">Ideas</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="showroom.html">Showroom</a>
+    </div>
+    <div class="nav-logo">
+      <img src="assets/LOGO.jpg" alt="Marmora Logo">
+    </div>
+    <div class="nav-right">
+      <a href="ideas.html">Ideas</a>
+      <a href="contact.html">Contact Us</a>
     </div>
   </nav>
 
-  <!-- Spacer -->
-  <div class="spacer"></div>
-
-  <!-- Contact Section -->
+  <!-- Main Content -->
   <div class="contact-container">
-    <h2>Contact Us</h2>
-    <form class="contact-form" action="#" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <!-- Map -->
+    <div class="map-box">
+      <iframe src="https://maps.app.goo.gl/cRnRpyBz8ybAtD4j7"
+              allowfullscreen="" loading="lazy"></iframe>
+    </div>
 
-    <!-- Optional Map Embed -->
-    <div class="map-container">
-      <iframe 
-        src="https://www.google.gr/maps/place/%CE%A0%CE%AD%CF%84%CF%81%CE%BF%CF%85+%CE%A1%CE%AC%CE%BB%CE%BB%CE%B7/@37.9762228,23.6683266,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bc818c733f47:0x1b752ef5260dfae6!8m2!3d37.9762186!4d23.6709015!16s%2Fg%2F11b7nwqhql?entry=ttu&g_ep=EgoyMDI1MDYwMy4wIKXMDSoASAFQAw%3D%3D" 
-        allowfullscreen="" 
-        loading="lazy">
-      </iframe>
+    <!-- Contact Info -->
+    <div class="info-box">
+      <strong>Phone:</strong> <a href="tel:+1234567890">+1 234 567 890</a><br>
+      <strong>Email:</strong> <a href="mailto:info@marmora.com">info@marmora.com</a><br>
+      <strong>Instagram:</strong> <a href="https://instagram.com/yourhandle" target="_blank">https://www.instagram.com/marmora.greece/</a><br>
+      <strong>Facebook:</strong> <a href="https://facebook.com/yourpage" target="_blank"></a><br>
+      <strong>Address:</strong> Πετρου ραλλη 200
     </div>
   </div>
 
   <!-- Footer -->
   <footer>
-    &copy; 2025 MARMORA. All rights reserved.
+    <div class="logo-footer">
+      <img src="assets/LOGO.jpg" alt="Company Logo" />
+    </div>
+    <ul style="list-style: none; padding: 0;">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="showroom.html">Showroom</a></li>
+      <li><a href="ideas.html">Ideas</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
   </footer>
 
 </body>
