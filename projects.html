@@ -3,97 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects | MARMORA</title>
+  <title>Projects – MÁRMORA</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 40px;
-      background: #fafafa;
+      background-color: #f5f5f5;
     }
 
-    .project-card {
-      width: 300px;
-      margin: 20px auto;
-      text-align: left;
-      background: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .project-card img {
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
       width: 100%;
-      height: auto;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      z-index: 1000;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      margin: 0 15px;
+    }
+
+    .spacer {
+      height: 100px;
+    }
+
+    /* Carousel */
+    .projects-carousel {
+      max-width: 1000px;
+      margin: 40px auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-track img {
+      width: 100%;
+      max-width: 300px;
+      margin-right: 20px;
       cursor: pointer;
-      display: block;
+      border-radius: 10px;
     }
 
-    .project-content {
-      padding: 20px;
+    .dots {
+      text-align: center;
+      margin-top: 10px;
     }
 
-    .project-content h3 {
-      margin: 0 0 10px;
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
     }
 
-    .project-content p {
-      color: #555;
-      margin: 0;
+    .dot.active {
+      background: black;
     }
 
-    /* Lightbox Styles */
+    /* Lightbox */
     .lightbox {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0,0,0,0.8);
       display: none;
-      justify-content: center;
       align-items: center;
-      z-index: 1000;
+      justify-content: center;
+      z-index: 1001;
     }
 
     .lightbox img {
       max-width: 90%;
       max-height: 90%;
-      border-radius: 10px;
+      border-radius: 8px;
     }
 
     .lightbox:target {
       display: flex;
     }
 
-    .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      color: white;
-      font-size: 32px;
-      text-decoration: none;
-      font-weight: bold;
+    /* Footer */
+    footer {
+      background-color: #f5f5f5;
+      padding: 40px;
+      text-align: center;
+      font-size: 14px;
+      border-top: 1px solid #ccc;
     }
-
   </style>
 </head>
 <body>
 
-  <!-- Project Card -->
-  <div class="project-card">
-    <a href="#img1-lightbox">
-      <img src="assets/img1.jpg" alt="Modern Kitchen" />
-    </a>
-    <div class="project-content">
-      <h3>Modern Kitchen</h3>
-      <p>A sleek marble finish enhances this minimalist kitchen space with durability and elegance.</p>
+  <!-- Navbar -->
+  <nav>
+    <div style="display: flex; gap: 20px;">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="showroom.html">Showroom</a>
     </div>
-  </div>
+    <div style="font-family: serif; font-size: 24px;">MÁRMORA</div>
+    <div style="display: flex; gap: 20px;">
+      <a href="ideas.html">Ideas</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
 
-  <!-- Lightbox -->
+  <div class="spacer"></div>
+
+  <!-- Carousel -->
+  <section class="projects-carousel">
+    <div class="carousel-track">
+      <a href="#img1-lightbox"><img src="assets/project1.jpg" alt="Project 1"></a>
+      <a href="#img2-lightbox"><img src="assets/project2.jpg" alt="Project 2"></a>
+      <a href="#img3-lightbox"><img src="assets/project3.jpg" alt="Project 3"></a>
+    </div>
+    <div class="dots">
+      <span data-slide="0" class="dot active"></span>
+      <span data-slide="1" class="dot"></span>
+      <span data-slide="2" class="dot"></span>
+    </div>
+  </section>
+
+  <!-- Lightboxes -->
   <div id="img1-lightbox" class="lightbox">
-    <a href="#" class="lightbox-close">&times;</a>
-    <img src="assets/img1.jpg" alt="Modern Kitchen Full View" />
+    <a href="#"><img src="assets/k1.jpg" alt="Project 1 Full" /></a>
+  </div>
+  <div id="img2-lightbox" class="lightbox">
+    <a href="#"><img src="assets/k1.jpg" alt="Project 2 Full" /></a>
+  </div>
+  <div id="img3-lightbox" class="lightbox">
+    <a href="#"><img src="assets/k1.jpg" alt="Project 3 Full" /></a>
   </div>
 
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 MÁRMORA. All rights reserved. | <a href="https://instagram.com" target="_blank">Instagram</a> | <a href="https://facebook.com" target="_blank">Facebook</a>
+  </footer>
+
+  <!-- Carousel Script -->
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const dots = document.querySelectorAll('.dot');
+    let current = 0;
+
+    function updateCarousel() {
+      const slideWidth = track.children[0].getBoundingClientRect().width + 20;
+      track.style.transform = `translateX(-${slideWidth * current}px)`;
+      dots.forEach(d => d.classList.remove('active'));
+      dots[current].classList.add('active');
+    }
+
+    dots.forEach((dot, i) =>
+      dot.addEventListener('click', () => {
+        current = i;
+        updateCarousel();
+      })
+    );
+
+    setInterval(() => {
+      current = (current + 1) % dots.length;
+      updateCarousel();
+    }, 4000);
+  </script>
 </body>
 </html>
