@@ -100,14 +100,38 @@
       color: #333;
     }
 
-    /* FOOTER */
+
+    /* === FOOTER === */
     footer {
-      background-color: #f2f2f2;
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 16px;
-      color: #555;
+      background: #f2f2f2;
+      color: black;
+      display: flex;
+      justify-content: center;
+      padding: 30px;
     }
+
+    footer .logo-footer img {
+      max-width: 140px;
+      height: auto;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    footer ul li {
+      margin-bottom: 5px;
+    }
+
+    footer ul li a {
+      color: black;
+      text-decoration: none;
+    }
+	
+	
+	
 
     @media (max-width: 768px) {
       .section {
@@ -189,11 +213,22 @@
       </p>
     </div>
   </div>
+	  <footer>
+    <div class="logo-footer">
+      <img src="assets/LOGO.jpg" alt="Company Logo" />
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="showroom.html">Showroom</a></li>
+      <li><a href="ideas.html">Ideas</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      &copy; 2025 MARMORA. All rights reserved.
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 MARMORA. All rights reserved.
+    </ul>
   </footer>
+  <!-- Footer -->
+  
 
 </body>
 </html>
