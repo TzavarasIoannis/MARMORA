@@ -17,7 +17,7 @@
 }
     /* Navbar */
    /* === NAVIGATION === */
-    nav {
+  nav {
   position: fixed;
   top: 0;
   width: 100%;
@@ -90,7 +90,11 @@ nav a:hover::after {
     nav a:hover {
       text-decoration: underline;
     }
-
+	
+	
+	
+	
+	
  
     /* === LOGO === */
     .logo-top {
@@ -203,21 +207,28 @@ nav a:hover::after {
 <body>
 
   <!-- Navbar -->
+	
+	  <header>
+   
   <nav>
-    <div style="display: flex; gap: 20px;">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="showroom.html">Showroom</a>
-    </div>
-          <div class="nav-logo">
+    <div class="nav-container">
+      <div class="nav-section nav-left">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="showroom.html">Showroom</a>
+      </div>
+      <div class="nav-logo">
         <img src="assets/LOGO.jpg" alt="Company Logo" />
       </div>
-   <!-- <div style="font-family: serif; font-size: 24px;">MÁRMORA</div>-->
-    <div style="display: flex; gap: 20px;">
-      <a href="ideas.html">Ideas</a>
-      <a href="contact.html">Contact Us</a>
+      <div class="nav-section nav-right">
+        <a href="ideas.html">Ideas</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
     </div>
   </nav>
+  </header>
+	
+	
 
   <div class="spacer"></div>
 
