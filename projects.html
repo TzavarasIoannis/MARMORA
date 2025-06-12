@@ -368,10 +368,12 @@ nav a:hover::after {
 	  
   </style>
 	<!-- Swiper CSS -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+	
 </head>
 <body>
 	
@@ -474,88 +476,63 @@ nav a:hover::after {
 
   <!-- Carousel Script -->
 <script>
+ <!-- Swiper + Tab Script -->
+<script>
   document.addEventListener("DOMContentLoaded", function () {
-  const tabButtons = document.querySelectorAll('.tab-button');
-  const tabContents = document.querySelectorAll('.tab-content');
-  const urlParams = new URLSearchParams(window.location.search);
-  const activeTab = urlParams.get("tab");
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const urlParams = new URLSearchParams(window.location.search);
+    const activeTab = urlParams.get("tab");
 
-  function activateTab(tabName) {
-    tabButtons.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.tab === tabName);
-    });
-    tabContents.forEach(content => {
-      content.classList.toggle('active', content.id === tabName);
-    });
-  }
+    // Store swiper instances per tab
+    const swiperInstances = {};
 
+    function activateTab(tabName) {
+      tabButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === tabName);
+      });
+      tabContents.forEach(content => {
+        content.classList.toggle('active', content.id === tabName);
+      });
 
-  // Carousel (if you're still using it)
-  const track = document.querySelector('.carousel-track');
-  const dots = document.querySelectorAll('.dot');
-  let current = 0;
+      // Initialize swiper for the newly activated tab if not already done
+      if (!swiperInstances[tabName]) {
+        const swiperEl = document.querySelector(`#${tabName} .mySwiper`);
+        if (swiperEl) {
+          swiperInstances[tabName] = new Swiper(swiperEl, {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            loop: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+              rotate: 30,
+              stretch: 0,
+              depth: 200,
+              modifier: 1,
+              slideShadows: true,
+            },
+          });
+        }
+      }
+    }
 
-  function updateCarousel() {
-    const slideWidth = track?.children[0]?.getBoundingClientRect().width + 20;
-    if (!slideWidth) return;
-    track.style.transform = `translateX(-${slideWidth * current}px)`;
-    dots.forEach(d => d.classList.remove('active'));
-    dots[current].classList.add('active');
-  }
-
-  if (dots.length && track) {
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        current = i;
-        updateCarousel();
+    // Add click listeners to tabs
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        activateTab(button.dataset.tab);
       });
     });
 
-    setInterval(() => {
-      current = (current + 1) % dots.length;
-      updateCarousel();
-    }, 4000);
-  }
-});
-
-	
-
-  // Swiper with Coverflow Effect
-  const swipers = document.querySelectorAll('.mySwiper');
-  swipers.forEach((el) => {
-    new Swiper(el, {
-      effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      loop: true,
-      slidesPerView: "auto",
-      coverflowEffect: {
-        rotate: 30,
-        stretch: 0,
-        depth: 200,
-        modifier: 1,
-        slideShadows: true,
-      },
-    });
+    // Activate initial tab
+    if (activeTab) {
+      activateTab(activeTab);
+    } else {
+      activateTab("kitchen"); // default
+    }
   });
-});
+</script>
 
-
-  // Handle tab clicks
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      activateTab(button.dataset.tab);
-    });
-  });
-
-  // On load: activate tab from URL if present
-  if (activeTab) {
-    activateTab(activeTab);
-  } else {
-    // Fallback: show first tab if none specified
-    activateTab("kitchen");
-  }
- 
 </script>
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
