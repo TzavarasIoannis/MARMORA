@@ -86,10 +86,23 @@ nav a:hover::after {
 	
 	
 	
+.contact-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  font-size: 16px;
+}
+
+.contact-details p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
 
     .map-box {
-      flex: 1 1 400px;
-      min-height: 400px;
+  margin-top: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .map-box iframe {
@@ -107,10 +120,19 @@ nav a:hover::after {
       line-height: 2;
     }
 
-    .info-box a {
-      color: black;
-      text-decoration: none;
+    .info-box a { 
+	    max-width: 900px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 12px;
     }
+	 .info-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
 
    
        /* === FOOTER === */
@@ -283,18 +305,20 @@ nav a::after {
   <div class="contact-container">
     <!-- Map -->
     <div class="map-box">
-      <iframe src="https://maps.app.goo.gl/cRnRpyBz8ybAtD4j7"
+      <iframe src="https://g.co/kgs/Gs3bapj"
               allowfullscreen="" loading="lazy"></iframe>
     </div>
 
     <!-- Contact Info -->
     <div class="info-box">
+	    <div class="contact-details">
       <strong>Phone:</strong> <a href="tel:+1234567890">+1 234 567 890</a><br>
       <strong>Email:</strong> <a href="mailto:info@marmora.com">info@marmora.com</a><br>
-      <strong>Instagram:</strong> <a href="https://instagram.com/yourhandle" target="_blank">https://www.instagram.com/marmora.greece/</a><br>
-      <strong>Facebook:</strong> <a href="https://facebook.com/yourpage" target="_blank"></a><br>
-      <strong>Address:</strong> Πετρου ραλλη 200
-    </div>
+      <strong>Instagram:</strong> <a href="https://www.instagram.com/marmora.greece/" target="_blank"></a><br>
+      <strong>Facebook:</strong> <a href="https://www.facebook.com/xristos.xatziou.7?locale=el_GR" target="_blank"></a><br>
+      <strong>Address:</strong> Ατταλείας 93, Νίκαια 184 53
+   </div>
+	    </div>
   </div>
 
   <!-- Footer -->
