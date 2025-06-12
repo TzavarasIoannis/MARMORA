@@ -213,6 +213,21 @@ nav a:hover::after {
 }
 
  
+.swiper {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
 
 
 
@@ -342,8 +357,14 @@ nav a:hover::after {
 
 	  
   </style>
+	<!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
 </head>
 <body>
+	
 
   <!-- Navbar -->
 	
@@ -381,34 +402,57 @@ nav a:hover::after {
     <button class="tab-button" data-tab="bathroom">Bathroom</button>
   </div>
 
-  <div class="tab-content active" id="kitchen">
-    <div class="grid">
-      <img src="assets/K1.jpg" alt="Kitchen 1">
-      <img src="assets/K1.jpg" alt="Kitchen 2">
-      <img src="assets/K1.jpg" alt="Kitchen 3">
-    </div>
-  </div>
 
-  <div class="tab-content" id="fireplace">
-    <div class="grid">
-      <img src="assets/FP1.jpg" alt="Fireplace 1">
-      <img src="assets/FP1.jpg" alt="Fireplace 2">
-      <img src="assets/FP1.jpg" alt="Fireplace 3">
-    </div>
-  </div>
+	
+<!--  <div class="tab-content active" id="kitchen">-->
+<!--    <div class="grid">-->
+<!--      <img src="assets/K1.jpg" alt="Kitchen 1">-->
+<!--      <img src="assets/K1.jpg" alt="Kitchen 2">-->
+ <!--     <img src="assets/K1.jpg" alt="Kitchen 3">-->
+  <!--  </div>-->
+ <!-- </div>-->
 
-  <div class="tab-content" id="bathroom">
-    <div class="grid">
-      <img src="assets/K12.jpg" alt="Bathroom 1">
-      <img src="assets/K12.jpg" alt="Bathroom 2">
-      <img src="assets/K12.jpg" alt="Bathroom 3">
-	     <img src="assets/K12.jpg" alt="Bathroom 4">
-	     <img src="assets/K12.jpg" alt="Bathroom 5">
-    </div>
+ <!-- <div class="tab-content" id="fireplace">-->
+    <!--<div class="grid">-->
+     <!-- <img src="assets/FP1.jpg" alt="Fireplace 1">-->
+  <!--    <img src="assets/FP1.jpg" alt="Fireplace 2">-->
+ <!--     <img src="assets/FP1.jpg" alt="Fireplace 3">-->
+  <!--  </div>-->
+<!--  </div>-->
+
+<!--  <div class="tab-content" id="bathroom">-->
+<!--    <div class="grid">-->
+<!--      <img src="assets/K12.jpg" alt="Bathroom 1">-->
+<!--      <img src="assets/K12.jpg" alt="Bathroom 2">-->
+ <!--     <img src="assets/K12.jpg" alt="Bathroom 3">-->
+<!--	     <img src="assets/K12.jpg" alt="Bathroom 4">-->
+<!--	     <img src="assets/K12.jpg" alt="Bathroom 5">-->
+ <!--   </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<section class="projects-tabs">
+
+	
+<!-- Bathroom Tab Content -->
+<div class="tab-content" id="bathroom">
+<div class="grid">
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="assets/K12.jpg" alt="Bathroom 1" /></div>
+    <div class="swiper-slide"><img src="assets/K12.jpg" alt="Bathroom 2" /></div>
+    <div class="swiper-slide"><img src="assets/K12.jpg" alt="Bathroom 3" /></div>
+  </div>
+    <!-- Optional navigation -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+  </div>
   </div>
 </section>
 
 
+	
  
 
 
@@ -491,7 +535,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 4000);
   }
 });
+
+
+	 const swipers = document.querySelectorAll('.mySwiper');
+  swipers.forEach((container) => {
+    new Swiper(container, {
+      loop: true,
+      navigation: {
+        nextEl: container.querySelector('.swiper-button-next'),
+        prevEl: container.querySelector('.swiper-button-prev'),
+      },
+      spaceBetween: 20,
+      slidesPerView: 1,
+      grabCursor: true,
+    });
+  });
 </script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </body>
 </html>
