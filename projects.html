@@ -13,10 +13,14 @@
     }
 
 	  .mySwiper {
+ flex-shrink: 0;  /* Ensures width is governed by content */
+  aspect-ratio: 4 / 3; /* Keeps consistent shape */
+  overflow: hidden;     /* Hides any excess */
   max-width: 100%;
   width: 90vw; /* limits width on large screens */
   max-height: 500px;
   margin: 0 auto;
+  
   /*box-sizing: border-box;*/
 }
 
@@ -26,6 +30,8 @@
   height: hidden;
 	 border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	  justify-content: center;
+  align-items: center;
 }
 
 .swiper-slide img {
