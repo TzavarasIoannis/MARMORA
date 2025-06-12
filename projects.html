@@ -406,15 +406,12 @@ nav a:hover::after {
     document.getElementById(button.dataset.tab).classList.add('active');
   });
 });
-
-
-
-
-
-
-
-
-	  
+ // Manual click
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const tabName = button.dataset.tab;
+      activateTab(tabName);
+  
   </script>
 </body>
 </html>
