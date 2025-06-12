@@ -417,77 +417,66 @@ nav a:hover::after {
 
   <!-- Carousel Script -->
   <script>
-
-	  
-  // Also make buttons clickable manually as before
-  document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-
-      button.classList.add('active');
-      document.getElementById(button.dataset.tab).classList.add('active');
-    });
-  });
-});
-	  
-	  document.addEventListener("DOMContentLoaded", function () {
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
   const urlParams = new URLSearchParams(window.location.search);
   const activeTab = urlParams.get("tab");
 
-  if (activeTab) {
-    document.querySelectorAll('.tab-button').forEach(btn => {
-      btn.classList.remove('active');
-      if (btn.dataset.tab === activeTab) {
-        btn.classList.add('active');
-      }
+  function activateTab(tabName) {
+    tabButtons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.tab === tabName);
     });
-
-    document.querySelectorAll('.tab-content').forEach(tab => {
-      tab.classList.remove('active');
-      if (tab.id === activeTab) {
-        tab.classList.add('active');
-      }
+    tabContents.forEach(content => {
+      content.classList.toggle('active', content.id === tabName);
     });
   }
-		  
-    const track = document.querySelector('.carousel-track');
-    const dots = document.querySelectorAll('.dot');
-    let current = 0;
 
-    function updateCarousel() {
-      const slideWidth = track.children[0].getBoundingClientRect().width + 20;
-      track.style.transform = `translateX(-${slideWidth * current}px)`;
-      dots.forEach(d => d.classList.remove('active'));
-      dots[current].classList.add('active');
-    }
+  // Handle tab clicks
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      activateTab(button.dataset.tab);
+    });
+  });
 
-    dots.forEach((dot, i) =>
+  // On load: activate tab from URL if present
+  if (activeTab) {
+    activateTab(activeTab);
+  } else {
+    // Fallback: show first tab if none specified
+    activateTab("kitchen");
+  }
+
+  // Carousel (if you're still using it)
+  const track = document.querySelector('.carousel-track');
+  const dots = document.querySelectorAll('.dot');
+  let current = 0;
+
+  function updateCarousel() {
+    const slideWidth = track?.children[0]?.getBoundingClientRect().width + 20;
+    if (!slideWidth) return;
+    track.style.transform = `translateX(-${slideWidth * current}px)`;
+    dots.forEach(d => d.classList.remove('active'));
+    dots[current].classList.add('active');
+  }
+
+  if (dots.length && track) {
+    dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
         current = i;
         updateCarousel();
-      })
-    );
+      });
+    });
 
     setInterval(() => {
       current = (current + 1) % dots.length;
       updateCarousel();
     }, 4000);
-  document.querySelectorAll('.tab-button').forEach(button => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-
-    button.classList.add('active');
-    document.getElementById(button.dataset.tab).classList.add('active');
-  });
+  }
 });
- // Manual click
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const tabName = button.dataset.tab;
-      activateTab(tabName);
-  
+</script>
+
   </script>
 </body>
 </html>
