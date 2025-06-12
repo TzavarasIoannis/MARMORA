@@ -1,202 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us | MARMORA</title>
+  <meta charset="UTF‑8" />
+  <meta name="viewport" content="width=device-width, initial‑scale=1.0"/>
+  <title>Contact Us | MÁRMORA</title>
   <style>
     body, html {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       font-family: Arial, sans-serif;
+      background: #fafafa;
     }
-  nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #f2f2f2;
-  padding: 20px 30px;
-  z-index: 9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.3s ease;
-}
-.nav-section {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-    .nav-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-    
-    nav:hover {
-      opacity: 1;
+    nav {
+      position: fixed; top: 0; width: 100%;
+      background: #f2f2f2;
+      padding: 20px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-
-    .nav-left, .nav-right {
-      display: flex;
-      gap: 12px;
-      flex: 1;
-      justify-content: flex-start;
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      margin: 0 15px;
+      position: relative;
+      padding-bottom: 3px;
     }
-
-.nav-logo img {
-  height: 80px;
-  width: auto;
-  pointer-events: none;
-}
-
-nav a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  font-size: 18px;
-  position: relative;
-  padding-bottom: 3px;
-}
-
-
-nav a::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background: black;
-  bottom: 0;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-nav a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-    nav a:hover {
-      text-decoration: underline;
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 100%; height: 2px;
+      background: black;
+      bottom: 0; left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
     }
-	
-	
-	
-
-    .map-box {
-      flex: 1 1 400px;
-      min-height: 400px;
+    nav a:hover::after {
+      transform-origin: left;
+      transform: scaleX(1);
     }
-
-    .map-box iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .spacer { height: 80px; }
+    .contact-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px 20px;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 12px;
     }
-
-    .info-box {
-      flex: 1 1 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      font-size: 18px;
-      line-height: 2;
+    .contact-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
     }
-
-    .info-box a {
+    .contact-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .contact-details p {
+      margin: 10px 0;
+    }
+    .contact-details a {
       color: black;
       text-decoration: none;
     }
-
-   
-       /* === FOOTER === */
+    .map-container {
+      margin-top: 40px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .map-container iframe {
+      width: 100%; height: 350px; border: 0;
+    }
     footer {
       background: #f2f2f2;
-      color: black;
-      display: flex;
-      justify-content: center;
-      padding: 30px;
-    }
-
-    footer .logo-footer img {
-      max-width: 140px;
-      height: auto;
-    }
-
-    footer ul {
-      list-style: none;
-      padding: 0;
       text-align: center;
+      padding: 30px 0;
+      margin-top: 60px;
+      font-size: 14px;
+      color: #555;
     }
-
-    footer ul li {
-      margin-bottom: 5px;
-    }
-
-    footer ul li a {
+    footer a {
       color: black;
       text-decoration: none;
+      margin: 0 8px;
     }
-
-    
-
-        nav:hover {
-      opacity: 1;
-    }
-
-    .nav-left, .nav-right {
-      display: flex;
-      gap: 12px;
-      flex: 1;
-      justify-content: flex-start;
-    }
-
-.nav-logo img {
-  height: 100px;
-  width: auto;
-  pointer-events: none;
-}
-    nav a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  font-size: 18px;
-  position: relative;
-  padding-bottom: 3px;
-}
-    
-nav a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-
-
-nav a::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background: black;
-  bottom: 0;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-
-    @media (max-width: 768px) {
-      .contact-container {
-        flex-direction: column;
-        padding: 100px 20px 40px;
+    @media(max-width:768px) {
+      .contact-details {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -204,57 +100,54 @@ nav a::after {
 <body>
 
   <!-- Navbar -->
- 
-	  <header>
-   
   <nav>
-    <div class="nav-container">
-      <div class="nav-section nav-left">
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="showroom.html">Showroom</a>
-      </div>
-      <div class="nav-logo">
-        <img src="assets/LOGO.jpg" alt="Company Logo" />
-      </div>
-      <div class="nav-section nav-right">
-        <a href="ideas.html">Ideas</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="showroom.html">Showroom</a>
+    </div>
+    <div class="nav-logo">
+      <a href="index.html" style="font-size:24px; font-family:serif;">MÁRMORA</a>
+    </div>
+    <div class="nav-right">
+      <a href="ideas.html">Ideas</a>
+      <a href="contact.html">Contact Us</a>
     </div>
   </nav>
-  </header>
+  <div class="spacer"></div>
 
-  <!-- Main Content -->
-  <div class="contact-container">
-    <!-- Map -->
-    <div class="map-box">
-      <iframe src="https://maps.app.goo.gl/cRnRpyBz8ybAtD4j7"
-              allowfullscreen="" loading="lazy"></iframe>
+  <!-- Content -->
+  <div class="contact-section">
+    <h2>Contact Us</h2>
+    <div class="contact-details">
+      <div>
+        <p><strong>Phone:</strong><br><a href="tel:+1234567890">+1 234 567 890</a></p>
+        <p><strong>Email:</strong><br><a href="mailto:info@marmora.com">info@marmora.com</a></p>
+        <p><strong>Facebook:</strong><br><a href="https://facebook.com/marmora" target="_blank">facebook.com/marmora</a></p>
+      </div>
+      <div>
+        <p><strong>Instagram:</strong><br><a href="https://instagram.com/marmora.greece" target="_blank">@marmora.greece</a></p>
+        <p><strong>Address:</strong><br>Πέτρου Ράλλη 200, Αθήνα 118 55</p>
+      </div>
     </div>
 
-    <!-- Contact Info -->
-    <div class="info-box">
-      <strong>Phone:</strong> <a href="tel:+1234567890">+1 234 567 890</a><br>
-      <strong>Email:</strong> <a href="mailto:info@marmora.com">info@marmora.com</a><br>
-      <strong>Instagram:</strong> <a href="https://instagram.com/yourhandle" target="_blank">https://www.instagram.com/marmora.greece/</a><br>
-      <strong>Facebook:</strong> <a href="https://facebook.com/yourpage" target="_blank"></a><br>
-      <strong>Address:</strong> Πετρου ραλλη 200
+    <!-- Embedded Map -->
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3122.494049905872!2d23.70763021504293!3d38.00487977971671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2f5fc1d919d%3A0x2dc063917dc4dff6!2sPetrou%20Ralli%20200%2C%20Athina%20118%2055%2C%20Greece!5e0!3m2!1sen!2sgr!4v1686379186545!5m2!1sen!2sgr"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </div>
 
   <!-- Footer -->
-	  <footer>
-    <div class="logo-footer">
-      <img src="assets/LOGO.jpg" alt="Company Logo" />
-    </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="showroom.html">Showroom</a></li>
-      <li><a href="ideas.html">Ideas</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
+  <footer>
+    MÁRMORA &copy; 2025 | 
+    <a href="index.html">Home</a> |
+    <a href="projects.html">Projects</a> |
+    <a href="showroom.html">Showroom</a> |
+    <a href="ideas.html">Ideas</a> |
+    <a href="contact.html">Contact Us</a>
   </footer>
 
 </body>
