@@ -11,6 +11,27 @@
       margin: 0;
       background-color: #f5f5f5;
     }
+	  .mySwiper {
+  max-width: 100%;
+  width: 90vw; /* limits width on large screens */
+  max-height: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.mySwiper .swiper-slide {
+  width: auto !important;
+  max-width: 300px; /* Adjust depending on how small you want them */
+  height: auto;
+}
+
+.swiper-slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
 
     .spacer {
   height: 100px; /* match your navbar height */
@@ -318,6 +339,14 @@ nav a:hover::after {
         gap: 15px;
         margin: 30px 10px;
       }
+	      .mySwiper {
+    max-height: 300px;
+  }
+
+  .mySwiper .swiper-slide {
+    max-width: 250px;
+  }
+}
 
       .image-link img {
         width: 90vw;
