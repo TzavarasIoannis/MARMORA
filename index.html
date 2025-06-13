@@ -139,13 +139,57 @@ nav a:hover::after {
 
     /* === SECTION BOXES === */
     .section-boxes {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 60px auto;
-      max-width: 900px;
-      padding: 30px;
+    display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 80px auto;
+  max-width: 1000px;
     }
+    
+
+.fancy-box {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fancy-box img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.fancy-box .box-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  font-size: 1.5em;
+  padding: 15px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s ease;
+}
+
+.fancy-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.fancy-box:hover img {
+  transform: scale(1.05);
+}
+
+.fancy-box:hover .box-title {
+  background: rgba(0,0,0,0.6);
+}
 
     .section-box {
       text-align: center;
@@ -361,6 +405,8 @@ nav a:hover::after {
   <div class="quote-top">“Born from the earth. Built to endure”</div>
 
   <div class="section-title">Explore Collections</div>
+
+  <!--
   <section class="section-boxes">
     <div class="section-box">
       <h3>Kitchen</h3>
@@ -383,7 +429,26 @@ nav a:hover::after {
         <span class="explore-text"> </span>
       </a>
     </div>
-  </section>
+  </section> -->
+
+  
+<section class="section-boxes">
+  <a href="projects.html?tab=kitchen" class="fancy-box">
+    <img src="assets/img1.jpg" alt="Kitchen">
+    <div class="box-title">Kitchen</div>
+  </a>
+  <a href="projects.html?tab=bathroom" class="fancy-box">
+    <img src="assets/img2.jpg" alt="Bathroom">
+    <div class="box-title">Bathroom</div>
+  </a>
+  <a href="projects.html?tab=fireplace" class="fancy-box">
+    <img src="assets/img3.jpg" alt="Fireplace">
+    <div class="box-title">Fireplace</div>
+  </a>
+</section>
+
+
+  
 
   <div class="quote-bottom">“Sculpted for those who seek the extraordinary”</div>
 
