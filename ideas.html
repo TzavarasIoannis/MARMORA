@@ -152,6 +152,48 @@ nav a:hover::after {
 	
 	
 
+ /*  ideas seperated  */
+	.ideas-steps {
+  background: #fdfdfd;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.ideas-steps .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.step-box {
+  flex: 1 1 30%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+.step-box h2 {
+  font-size: 22px;
+  color: #111;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.step-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.step-box ul li {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 10px;
+}
   
   
   
@@ -201,6 +243,16 @@ nav a:hover::after {
       .logo-top img {
         max-height: 120px;
       }
+	    .ideas-steps .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-box {
+    width: 100%;
+    max-width: 90%;
+  }
+	    
     }
   
   
@@ -253,9 +305,10 @@ nav a:hover::after {
   <div class="section">
     <img src="assets/slide3.jpg" alt="Idea 2">
     <div class="text">
-      <h2>Architectural Precision</h2>
+      <h2>Η αρχιτεκρονική του μάρμαρου</h2>
       <p>
-        A bold take on structure and geometry. This visual explores how precision-cut stone meets futuristic aesthetics. Think bold lines and timeless material.
+       Το μάρμαρο είναι φυσικός λίθος μεταμορφωσιγενής, που προέρχεται κυρίως από την ανακρυστάλλωση του ασβεστίτη και χαρακτηρίζεται από την ιδιαίτερη αισθητική του και τις μοναδικές νευρώσεις του κάθε τεμαχίου. Λόγω της φυσικής του προέλευσης, κάθε επιφάνεια μαρμάρου είναι κυριολεκτικά μοναδική. 
+	      Παράλληλα, προσφέρει υψηλή ανθεκτικότητα και δυνατότητα στιλβώματος, καθιστώντας το ιδανικό για δάπεδα, σκάλες, πάγκους, επενδύσεις τοίχων και ειδικές κατασκευές. 
       </p>
     </div>
   </div>
@@ -266,7 +319,8 @@ nav a:hover::after {
     <div class="text">
       <h2>Urban Escape</h2>
       <p>
-        Bringing natural textures into the city—this concept bridges rustic tradition with minimal design, perfect for urban homes or boutique commercial spaces.
+Το κεραμικό είναι ένα εξελιγμένο υλικό που κατασκευάζεται από φυσικές πρώτες ύλες (κυρίως άργιλο και φυσικά ορυκτά) και ψήνεται σε υψηλές θερμοκρασίες ώστε να αποκτήσει εξαιρετική μηχανική και χημική αντοχή. Χρησιμοποιείται ευρέως σε εφαρμογές επένδυσης και επικάλυψης, όπως δάπεδα, τοίχοι, πάγκοι κουζίνας και μπάνιου, χάρη στην ανθεκτικότητά του σε γρατζουνιές, υγρασία, θερμότητα και χημικά καθαριστικά. 
+	      Τα σύγχρονα κεραμικά μεγάλων διαστάσεων (porcelain slabs) προσφέρουν ελαχιστοποίηση αρμών και υψηλή αισθητική αρτιότητα, με υφές που προσομοιάζουν φυσικά υλικά όπως το μάρμαρο, το ξύλο ή το σκυρόδεμα.     
       </p>
     </div>
   </div>
@@ -287,6 +341,40 @@ nav a:hover::after {
       </p>
     </div>
   </div>
+
+
+
+
+	<section class="ideas-steps">
+  <div class="container">
+    <div class="step-box">
+      <h2>Εσωτερικοί Χώροι</h2>
+      <ul>
+        <li>Πάγκοι κουζίνας & νησίδες</li>
+        <li>Πάγκοι μπάνιου & νιπτήρες</li>
+        <li>Επενδύσεις τοίχων</li>
+	<li>Τζάκια</li>
+	<li>Τραπεζαρίες & τραπέζια</li>
+      </ul>
+    </div>
+    <div class="step-box">
+      <h2>Εξωτερικοί Χώροι</h2>
+      <ul>
+        <li>Sketch & draft ideas</li>
+        <li>Visual mockups</li>
+        <li>Client feedback</li>
+      </ul>
+    </div>
+    <div class="step-box">
+      <h2>Επαγγελματικοί & Δημόσιοι Χώροι</h2>
+      <ul>
+        <li>Material selection</li>
+        <li>Final installation</li>
+        <li>Quality check</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 	
 	  <footer>
