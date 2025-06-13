@@ -161,19 +161,22 @@ nav a:hover::after {
 
 .ideas-steps .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px auto;
   max-width: 1200px;
-  margin: 0 auto;
-  gap: 30px;
+  padding: 0 15px;
 }
 
 .step-box {
-  flex: 1 1 30%;
-  background: #fff;
+    background: white;
   border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .step-box h2 {
@@ -195,9 +198,15 @@ nav a:hover::after {
   margin-bottom: 10px;
 }
   
-  
-  
-  
+  .icon-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.icon-header svg {
+  display: block;
+  margin: 0 auto 10px auto;
+}
+ 
 /* === RESPONSIVE === */
     @media (max-width: 768px) {
       .section-boxes {
@@ -263,7 +272,7 @@ nav a:hover::after {
   }
 
   .ideas-section img {
-    width: 100%;
+  width: 100%;
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
@@ -337,37 +346,26 @@ nav a:hover::after {
   <div class="section">
     <img src="assets/slide3.jpg" alt="Idea 3">
     <div class="text">
-      <h2>Urban Escape</h2>
+      <h2>Λεπτομέρια με Kεραμικό</h2>
       <p>
 Το κεραμικό είναι ένα εξελιγμένο υλικό που κατασκευάζεται από φυσικές πρώτες ύλες (κυρίως άργιλο και φυσικά ορυκτά) και ψήνεται σε υψηλές θερμοκρασίες ώστε να αποκτήσει εξαιρετική μηχανική και χημική αντοχή. Χρησιμοποιείται ευρέως σε εφαρμογές επένδυσης και επικάλυψης, όπως δάπεδα, τοίχοι, πάγκοι κουζίνας και μπάνιου, χάρη στην ανθεκτικότητά του σε γρατζουνιές, υγρασία, θερμότητα και χημικά καθαριστικά. 
 	      Τα σύγχρονα κεραμικά μεγάλων διαστάσεων (porcelain slabs) προσφέρουν ελαχιστοποίηση αρμών και υψηλή αισθητική αρτιότητα, με υφές που προσομοιάζουν φυσικά υλικά όπως το μάρμαρο, το ξύλο ή το σκυρόδεμα.     
       </p>
     </div>
   </div>
-
-
-
-	  <!-- Section 4 -->
-  <div class="section">
-    <img src="assets/slide3.jpg" alt="Idea 1">
-    <div class="text">
-      <h2>Αρμονία με φυσικό χαλαζία</h2>
-	    <p>
-	 Ο χαλαζίας (quartz) είναι ένα συνθετικό πέτρωμα υψηλής αντοχής, που αποτελείται κατά 90-95% από φυσικά κρυσταλλικά πετρώματα χαλαζία και 5-10% από πολυμερή ρητίνη και χρωστικές.
-		    Χάρη στη χαμηλή απορροφητικότητα και την υψηλή ανθεκτικότητα σε μηχανικές καταπονήσεις, χημικά και θερμότητα, αποτελεί ιδανική επιλογή για πάγκους κουζίνας, μπάνιου, 
-		    επενδύσεις τοίχων και άλλες εφαρμογές εσωτερικού χώρου </p>
-	    <p>
-        Inspired by organic forms and soft finishes, this concept blends raw marble with modern interiors. The texture tells a story of time, nature, and calm elegance.
-      </p>
-    </div>
-  </div>
-
-
-
-
-	<section class="ideas-steps">
+ 
+ 
+<section class="ideas-steps">
   <div class="container">
     <div class="step-box">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chair" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#eaf200" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+    <path d="M5 12h14" />
+    <path d="M7 12v7" />
+    <path d="M17 12v7" />
+    <path d="M7 19h10" />
+    <path d="M9 12v-7h6v7" />
+  </svg>
       <h2>Εσωτερικοί Χώροι</h2>
       <ul>
         <li>Πάγκοι κουζίνας & νησίδες</li>
