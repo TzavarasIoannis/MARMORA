@@ -361,16 +361,43 @@ position: relative;
         width: 90vw;
       }
 
-      nav {
-        flex-direction: column;
-        align-items: center;
+     
+        nav {
+      /* ===   flex-direction: column;  === */
+	      padding: 15px 20px;
+	        position: sticky;
+
+      /* ===   align-items: center; === */
       }
+	     .nav-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .nav-section a {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+
+  .nav-logo {
+    margin: 10px 0;
+  }
 
       .nav-left, .nav-right {
         flex-direction: column;
         align-items: center;
         gap: 10px;
       }
+      
 
       .quote-top, .quote-bottom {
         font-size: 1.1em;
@@ -409,16 +436,16 @@ position: relative;
   <nav>
     <div class="nav-container">
       <div class="nav-section nav-left">
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="showroom.html">Showroom</a>
+        <a href="index.html">Αρχική</a>
+        <a href="projects.html">Έργα</a>
+        <a href="showroom.html">Ο χώρος μας</a>
       </div>
       <div class="nav-logo">
         <img src="assets/LOGO.jpg" alt="Company Logo" />
       </div>
       <div class="nav-section nav-right">
-        <a href="ideas.html">Ideas</a>
-        <a href="contact.html">Contact</a>
+        <a href="ideas.html">Ιδέες</a>
+        <a href="contact.html">Επικοινωνία</a>
       </div>
     </div>
   </nav>
