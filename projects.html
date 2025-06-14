@@ -379,10 +379,35 @@ nav a:hover::after {
         width: 90vw;
       }
 
-      nav {
-        flex-direction: column;
-        align-items: center;
+  nav {
+      /* ===   flex-direction: column;  === */
+	      padding: 15px 20px;
+	        position: sticky;
+
+      /* ===   align-items: center; === */
       }
+	     .nav-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .nav-section a {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+
+  .nav-logo {
+    margin: 10px 0;
+  }
 
       .nav-left, .nav-right {
         flex-direction: column;
