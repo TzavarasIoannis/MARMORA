@@ -137,7 +137,16 @@ nav a:hover::after {
       font-family: 'Open Sans'
       
     }
+.quote {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
+.quote.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
     .section-title, .slider-title {
       text-align: center;
       font-size: 2em;
@@ -502,9 +511,11 @@ position: relative;
 
 
   
+<div class="quote-section">
+  <p class="quote">“Για εκείνους που δεν συμβιβάζονται με το συνηθισμένο”</p>
+ </div>
 
-  <div class="quote-bottom">“Για εκείνους που δεν συμβιβάζονται με το συνηθισμένο”</div>
-
+	
   <div class="slider-title">Οι δημιουργίες μας</div>
   <section class="slider">
     <div class="slider-images">
@@ -583,6 +594,19 @@ position: relative;
         modal.style.display = "none";
       }
     };
+	   const quotes = document.querySelectorAll('.quote');
+
+  const revealOnScroll = () => {
+    quotes.forEach(quote => {
+      const rect = quote.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        quote.classList.add('visible');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
   </script>
 
 </body>
