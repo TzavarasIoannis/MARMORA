@@ -584,7 +584,7 @@ nav a:hover::after {
 
   <!-- Carousel Script -->
   <!-- Swiper + Tab Script -->
-<script>
+  <!--<script>
   document.addEventListener("DOMContentLoaded", function () {
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -657,11 +657,86 @@ nav a:hover::after {
       this.style.display = 'none';
     }
   });
+</script> -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const urlParams = new URLSearchParams(window.location.search);
+    const activeTab = urlParams.get("tab");
+
+    // Store swiper instances per tab
+    const swiperInstances = {};
+
+    function activateTab(tabName) {
+      tabButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === tabName);
+      });
+      tabContents.forEach(content => {
+        content.classList.toggle('active', content.id === tabName);
+      });
+
+      // Initialize swiper for the newly activated tab if not already done
+      if (!swiperInstances[tabName]) {
+        const swiperEl = document.querySelector(`#${tabName} .mySwiper`);
+        if (swiperEl) {
+          swiperInstances[tabName] = new Swiper(swiperEl, {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            loop: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+              rotate: 30,
+              stretch: 0,
+              depth: 200,
+              modifier: 1,
+              slideShadows: true,
+            },
+          });
+        }
+      }
+    }
+
+    // Add click listeners to tabs
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        activateTab(button.dataset.tab);
+      });
+    });
+
+    // Activate initial tab
+    activateTab(activeTab || "kitchen");
+
+    // Setup lightbox functionality
+    document.querySelectorAll('.swiper-slide img').forEach(img => {
+      img.addEventListener('click', function () {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = this.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    // Close on X
+    document.querySelector('.lightbox .close').addEventListener('click', function () {
+      document.getElementById('lightbox').style.display = 'none';
+    });
+
+    // Close on background click
+    document.getElementById('lightbox').addEventListener('click', function (e) {
+      if (e.target.id === 'lightbox') {
+        this.style.display = 'none';
+      }
+    });
+  });
 </script>
-  
-<div class="lightbox" id="lightbox">
-  <span class="close">&times;</span>
-  <img id="lightbox-img" src="" alt="Preview" />
+
+	  
+<div id="lightbox" class="lightbox">
+  <span class="close">❌</span>
+  <img id="lightbox-img" src="" alt="Enlarged Image">
 </div>
 
 
