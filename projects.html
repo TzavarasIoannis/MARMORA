@@ -199,12 +199,21 @@ nav a:hover::after {
     .lightbox img {
       max-width: 90%;
       max-height: 90%;
-      border-radius: 8px;
+      border-radius: 10px;
     }
 
     .lightbox:target {
       display: flex;
     }
+	  .lightbox .close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
 
   
     /* === FOOTER === */
@@ -453,6 +462,9 @@ nav a:hover::after {
 
 	
 </head>
+
+
+	
 <body>
 	
 
@@ -626,8 +638,33 @@ nav a:hover::after {
       activateTab("kitchen"); // default
     }
   });
+	  document.querySelectorAll('.swiper-slide img').forEach(img => {
+    img.addEventListener('click', function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = this.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  document.querySelector('.lightbox .close').addEventListener('click', function () {
+    document.getElementById('lightbox').style.display = 'none';
+  });
+
+  // Optional: close lightbox on background click
+  document.getElementById('lightbox').addEventListener('click', function (e) {
+    if (e.target === this) {
+      this.style.display = 'none';
+    }
+  });
 </script>
   
+<div class="lightbox" id="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightbox-img" src="" alt="Preview" />
+</div>
 
+
+	  
 </body>
 </html>
