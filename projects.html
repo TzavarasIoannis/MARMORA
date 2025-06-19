@@ -363,7 +363,16 @@ nav a:hover::after {
   background-position: center;
 }
   
-  
+  .image-caption {
+  margin-top: 15px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+              "Helvetica Neue", Arial, sans-serif;
+	  
+}
     /* === RESPONSIVE === */
     @media (max-width: 768px) {
       .section-boxes {
@@ -529,6 +538,8 @@ nav a:hover::after {
 
     </div>
   </div>
+	  <div class="image-caption"></div> <!-- caption line -->
+
 </div>
 
 <div class="tab-content" id="fireplace">
@@ -597,6 +608,7 @@ nav a:hover::after {
       tabButtons.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.tab === tabName);
       });
+	
       tabContents.forEach(content => {
         content.classList.toggle('active', content.id === tabName);
       });
@@ -692,8 +704,15 @@ nav a:hover::after {
               depth: 200,
               modifier: 1,
               slideShadows: true,
-            },
-          });
+            }, 
+		  on: {
+    slideChange: function () {
+      updateCaption(this);
+    },
+			  init: function () {
+      updateCaption(this);
+          }
+		  }});
         }
       }
     }
@@ -704,6 +723,13 @@ nav a:hover::after {
         activateTab(button.dataset.tab);
       });
     });
+
+	  function updateCaption(swiper) {
+  const activeSlide = swiper.slides[swiper.activeIndex];
+  const caption = activeSlide.querySelector('img')?.alt || '';
+  const captionDiv = swiper.el.parentElement.querySelector('.image-caption');
+  if (captionDiv) captionDiv.textContent = caption;
+}
 
     // Activate initial tab
     activateTab(activeTab || "kitchen");
