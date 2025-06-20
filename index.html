@@ -188,7 +188,7 @@ position: relative;
 
 .fancy-box img {
    width: 100%;
-  height: 310px; /* increased from 250px */
+  height: 390px; /* increased from 250px */
   object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
@@ -360,6 +360,57 @@ position: relative;
       text-decoration: none;
     }
 
+
+	  #our-services {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+#our-services h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-box {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+}
+
+.service-box i {
+  font-size: 40px;
+  color: #cc9933;
+  margin-bottom: 20px;
+}
+
+.service-box h3 {
+  font-size: 24px;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.service-box p {
+  color: #666;
+  font-size: 16px;
+}
+
+	  
     /* === RESPONSIVE === */
     @media (max-width: 768px) {
       .section-boxes {
@@ -449,6 +500,8 @@ position: relative;
      
      
   </style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
 
@@ -472,40 +525,18 @@ position: relative;
       <div class="nav-section nav-right">
         <a href="ideas.html">Ιδέες</a>
         <a href="contact.html">Επικοινωνία</a>
+	<a href="#our-services">Υπηρεσίες</a>
+
       </div>
     </div>
   </nav>
   </header>
 
-  <div class="quote">“Από τη φύση. Σχεδιασμένο για αντοχή”</div>
+  <div class="quote">Πάγκοι και Επενδύσεις Υψυλής Αισθητικής</div>
 
   <div class="section-title">Περιηγηθείτε στα Έργα μας</div>
 
-  <!--
-  <section class="section-boxes">
-    <div class="section-box">
-      <h3>Kitchen</h3>
-      <a href="projects.html?tab=kitchen" class="image-link">
-        <img src="assets/K5.jpg" alt="Kitchen">
-        <span class="explore-text"> </span>
-      </a>
-    </div>
-    <div class="section-box">
-      <h3>Bathroom</h3>
-      <a href="projects.html?tab=bathroom" class="image-link">
-        <img src="assets/B1.jpg" alt="Bathroom">
-        <span class="explore-text"> </span>
-      </a>
-    </div>
-    <div class="section-box">
-      <h3>Fireplace</h3>
-      <a href="projects.html?tab=fireplace" class="image-link">
-        <img src="assets/FP1.jpg" alt="Fireplace">
-        <span class="explore-text"> </span>
-      </a>
-    </div>
-  </section> -->
-
+ 
   
 <section class="section-boxes">
   <a href="projects.html?tab=kitchen" class="fancy-box">
@@ -523,9 +554,40 @@ position: relative;
 </section>
 
 
-  
-<div class="quote-section">
-  <p class="quote">“Για εκείνους που δεν συμβιβάζονται με το συνηθισμένο”</p>
+
+
+
+<section id="our-services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-box">
+        <i class="fas fa-hammer"></i>
+        <h3>Stone Carving</h3>
+        <p>High-quality hand-crafted marble and stone carving for architectural and decorative use.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-tools"></i>
+        <h3>Installation</h3>
+        <p>Professional installation of marble and granite surfaces with precision and care.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-sync-alt"></i>
+        <h3>Restoration</h3>
+        <p>Expert restoration of old marble structures to bring back their original beauty.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+	
+  <div class="quote-section">
+  <p class="quote">“Από τη φύση. Σχεδιασμένο για αντοχή”</p>
  </div>
 
 	
