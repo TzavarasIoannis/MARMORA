@@ -37,7 +37,7 @@
   align-items: center;
   padding: 0 20px;
   background-color: white;
-  height: 70px;
+  height:  auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -45,7 +45,8 @@
 }
 
 .nav-left .logo {
-  height: 50px;
+  height: 70px; /* Increase from 50px */
+  max-height: 100%;
 }
 
 .nav-center {
@@ -198,43 +199,48 @@
         grid-template-columns: 1fr;
       } 
 
-   nav {
-      /* ===   flex-direction: column;  === */
-	      padding: 0px 0px;
-	      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow */
-
- 	 	  
-
-      /* ===   align-items: center; === */
-      }
-	     .nav-container {
+  .nav-center {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: white;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    align-items: flex-start;
+    padding: 15px 20px;
+    display: none;
   }
 
-  .nav-section {
-    width: 100%;
+  .nav-center.open {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
   }
 
-  .nav-section a {
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .nav-links li a {
     font-size: 18px;
-    padding: 8px 12px;
   }
 
-  .nav-logo {
-    margin: 10px 0;
+  .nav-toggle {
+    display: block;
   }
 
-      .nav-left, .nav-right {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
+  .desktop-only {
+    display: none;
+  }
+
+  .nav-mobile-right {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
 
       .logo-top img {
         max-height: 120px;
@@ -266,13 +272,18 @@
   </div>
 
   <div class="nav-right">
-    <a href="https://www.instagram.com/marmora.greece/" target="_blank" class="instagram-icon">
-      <img src="instagram-icon.svg" alt="Instagram" />
-    </a>
-    <select class="language-selector">
-      <option value="el">GR</option>
-      <option value="en">EN</option>
-    </select>
+  
+
+<a href="https://instagram.com/yourprofile" target="_blank" class="instagram-icon">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+</a>
+
+	  
+  <select class="language-selector">
+  <option value="el">🇬🇷 Greek</option>
+  <option value="en">🇬🇧 English</option>
+</select>
+
   </div>
 </nav>
 
@@ -323,5 +334,11 @@
     	       
 
   </footer>
+	<script>
+  document.getElementById('mobile-toggle').addEventListener('click', function () {
+    document.getElementById('nav-menu').classList.toggle('open');
+  });
+</script>
+
 </body>
 </html>
