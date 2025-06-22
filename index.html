@@ -398,6 +398,13 @@ position: relative;
 	  
     /* === RESPONSIVE === */
     @media (max-width: 768px) {
+
+   header {
+    height: calc(100vh - 120px); /* Video height minus navbar */
+    padding-top: 120px;
+  }
+
+	    
       .section-boxes {
         flex-direction: column;
         align-items: center;
@@ -406,6 +413,7 @@ position: relative;
             justify-content: center;
     padding: 0px;
       }
+	    
 
       .image-link img {
         width: 100vw;
