@@ -33,88 +33,70 @@
     }
 
     /* === NAVIGATION === */
-    nav {
+    /* === NAVIGATION === */
+ .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0  0  0 0;
+  background-color: white;
+  height:  auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
-  width: 100%;
-  background: #f2f2f2;
-  padding: 10px 10px;
-  z-index: 9;
+  z-index: 1000; 
+    top: 0px;
+    width: 100%;
+}
+
+.nav-left .logo {
+  height: 120px; /* Increase from 50px */
+  max-height: 100%;
+  PADDING: 0 0 0  0px;
+}
+
+.nav-center {
+  flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-        font-family: 'Open Sans'
-  transition: opacity 0.3s ease;
 }
-.nav-section {
+
+.nav-links {
+  list-style: none;
   display: flex;
-  gap: 20px;
-  align-items: center;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
 }
 
-    .nav-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-    
-    nav:hover {
-      opacity: 1;
-    }
-
-    .nav-left, .nav-right {
-      display: flex;
-      gap: 60px;
-      flex: 1;
-      justify-content: flex-start;
-    }
-
-.nav-logo img {
-  height: 130px;
-  width: auto;
-  pointer-events: auto;
-}
-
-nav a {
+.nav-links li a {
   text-decoration: none;
   color: black;
   font-weight: bold;
-  font-size: 22px;
-  position: relative;
-  padding-bottom: 3px;
-	
-    white-space: nowrap;         /* prevents word wrapping */
-    overflow: hidden;            /* hides any overflow */
-    text-overflow: ellipsis;     /* optional: shows "..." if too long */
+  font-size: 18px;
 }
 
-
-nav a::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background: black;
-  bottom: 0;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-nav a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.instagram-icon img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
-    nav a:hover {
-      text-decoration: underline;
-    }
+
+.language-selector {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
 
  
     /* === LOGO === */
-    .logo-top {
+   .logo-top {
       position: absolute;
       top: 10px;
       left: 50%;
@@ -123,9 +105,10 @@ nav a:hover::after {
     }
 
     .logo-top img {
-      max-height: 250px;
+      max-height: 200px;
       width: auto;
     }
+
 
     /* === QUOTES === */
     .quote-top, .quote-bottom {
@@ -438,43 +421,70 @@ position: relative;
       }
 
      
-        nav {
+        /* ===   nav {=== */
       /* ===   flex-direction: column;  === */
-	      padding: 0px 0px;
-	        position: sticky;
+	    /* ===    padding: 0px 0px; === */
+	    /* ===      position: sticky; === */
 
       /* ===   align-items: center; === */
-      }
-	     .nav-container {
+      /* ===  } === */
+
+
+	      .nav-center {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .navbar {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-  }
-
-  .nav-section {
+	  position: Sticky;
+   
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+  }
+
+  .nav-left, .nav-right {
+    width: auto;
     justify-content: center;
-    gap: 12px;
+    margin: 5px 0;
   }
 
-  .nav-section a {
+ 
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    align-items: center;
+	   padding-bottom:15px;
+	   padding-top:15px;
+  }
+
+  .nav-links li a {
     font-size: 18px;
-    padding: 8px 12px;
   }
 
-  .nav-logo {
-    margin: 10px 0;
+  .nav-toggle {
+    display: block;
   }
 
-      .nav-left, .nav-right {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-      
+  .desktop-only {
+    display: none;
+  }
 
+  .nav-mobile-right {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+.nav-left .logo {
+  height: 120px;  
+  max-height: 100%;
+ 
       .quote-top, .quote-bottom {
         font-size: 1.1em;
         margin: 15px 10px;
@@ -559,29 +569,42 @@ position: relative;
 
   <header>
     <video class="bg-video" autoplay muted loop playsinline poster="assets/K1.jpg" >
-    <source src="assets/SMALLFILE.mp4" type="video/mp4" />
+    <source src="assets/VIDEO_BACK_SMALL.mp4" type="video/mp4" />
   </video>
-  <nav>
-    <div class="nav-container">
-      <div class="nav-section nav-left">
-        <a href="index.html">Αρχική</a>
-        <a href="projects.html">Έργα</a>
-        <a href="showroom.html">Ο χώρος μας</a>
-      </div>
-      <div class="nav-logo">
-	     <a href="index.html">
-  
-        <img src="assets/LOGO.jpg" alt="Company Logo" /> 
-		      </a>
-      </div>
-      <div class="nav-section nav-right">
-        <a href="ideas.html">Ιδέες</a>
-        <a href="contact.html">Επικοινωνία</a>
-	<a href="#our-services">Υπηρεσίες</a>
+ 
+	  <nav class="navbar">
+  <div class="nav-left">
+    <img src="assets/LOGO.jpg" alt="Logo" class="logo" />
+  </div>
 
-      </div>
-    </div>
-  </nav>
+  <div class="nav-center">
+    <ul class="nav-links">
+      <li><a href="index">Αρχική</a></li>
+      <li><a href="projects.html">Έργα</a></li>
+      <li><a href="ideas.html">Ιδέες</a></li>
+      <li><a href="contact.html">Επικοινωνία</a></li>
+	<li> <a href="#our-services">Υπηρεσίες</a></li>
+
+    </ul>
+  </div>
+
+  <div class="nav-right">
+  
+
+<a href="https://instagram.com/yourprofile" target="_blank" class="instagram-icon">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+</a>
+
+	  
+  <select class="language-selector">
+  <option value="el">🇬🇷 Greek</option>
+  <option value="en">🇬🇧 English</option>
+</select>
+
+  </div>
+</nav>
+
+
   </header>
 
   <div class="quote">Πάγκοι και Επενδύσεις Υψυλής Αισθητικής</div>
@@ -738,6 +761,12 @@ position: relative;
   window.addEventListener('scroll', revealOnScroll);
   window.addEventListener('load', revealOnScroll);
   </script>
+
+ <script>
+  document.getElementById('mobile-toggle').addEventListener('click', function () {
+    document.getElementById('nav-menu').classList.toggle('open');
+  });
+</script>
 
 </body>
 </html>
