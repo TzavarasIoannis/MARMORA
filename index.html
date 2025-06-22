@@ -589,9 +589,13 @@ position: relative;
     <ul class="nav-links">
       <li><a href="index">Αρχική</a></li>
       <li><a href="projects.html">Έργα</a></li>
-      <li><a href="ideas.html">Ιδέες</a></li>
+      <li><a href="ideas.html" data-lang="en">IDEAS</a></li>
+      <li><a href="ideas.html" data-lang="el">Ιδέες</a></li>
+
       <li><a href="contact.html">Επικοινωνία</a></li>
 	<li> <a href="#our-services">Υπηρεσίες</a></li>
+
+  
 
     </ul>
   </div>
@@ -768,6 +772,37 @@ position: relative;
 
   window.addEventListener('scroll', revealOnScroll);
   window.addEventListener('load', revealOnScroll);
+
+	  const translations = {
+    en: {
+      greeting: "Welcome to our site",
+      about: "About Us",
+      contact: "Contact"
+    },
+    fr: {
+      greeting: "Bienvenue sur notre site",
+      about: "À propos",
+      contact: "Contact"
+    }
+  };
+
+  const elements = document.querySelectorAll('[data-key]');
+
+  document.getElementById("language-selector").addEventListener("change", function () {
+    const selectedLang = this.value;
+    elements.forEach(el => {
+      const key = el.getAttribute('data-key');
+      el.textContent = translations[selectedLang][key];
+    });
+  });
+
+  // Set default language
+  window.addEventListener("DOMContentLoaded", () => {
+    const defaultLang = "el"; // Or detect from browser
+    document.getElementById("language-selector").value = defaultLang;
+    const event = new Event("change");
+    document.getElementById("language-selector").dispatchEvent(event);
+  });
   </script>
 
  <script>
