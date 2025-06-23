@@ -587,13 +587,12 @@ position: relative;
 
   <div class="nav-center">
     <ul class="nav-links">
-      <li><a href="index">Αρχική</a></li>
-      <li><a href="projects.html">Έργα</a></li>
-      <li><a href="ideas.html" data-lang="en">IDEAS</a></li>
-      <li><a href="ideas.html" data-lang="el">Ιδέες</a></li>
-
-      <li><a href="contact.html">Επικοινωνία</a></li>
-	<li> <a href="#our-services">Υπηρεσίες</a></li>
+      <li><a href="index"  data-key="ideas">Αρχική</a></li>
+      <li><a href="projects.html"  data-key="ideas">Έργα</a></li>
+      <li><a href="ideas.html" data-key="ideas">IDEAS</a></li>
+ 
+      <li><a href="contact.html"  data-key="ideas">Επικοινωνία</a></li>
+	<li> <a href="#our-services"  data-key="ideas">Υπηρεσίες</a></li>
 
   
 
@@ -803,6 +802,24 @@ position: relative;
     const event = new Event("change");
     document.getElementById("language-selector").dispatchEvent(event);
   });
+
+	  const translations = {
+  en: {
+    home: "Home",
+    projects: "Projects",
+    ideas: "Ideas",
+    contact: "Contact",
+    services: "Services"
+  },
+  el: {
+    home: "Αρχική",
+    projects: "Έργα",
+    ideas: "Ιδέες",
+    contact: "Επικοινωνία",
+    services: "Υπηρεσίες"
+  }
+};
+
   </script>
 
  <script>
