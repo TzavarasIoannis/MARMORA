@@ -587,12 +587,12 @@ position: relative;
 
   <div class="nav-center">
     <ul class="nav-links">
-      <li><a href="index"  data-key="ideas">Αρχική</a></li>
-      <li><a href="projects.html"  data-key="ideas">Έργα</a></li>
-      <li><a href="ideas.html" data-key="ideas">IDEAS</a></li>
+      <li><a href="index"  data-key="home">Αρχική</a></li>
+      <li><a href="projects.html"  data-key="projects">Έργα</a></li>
+      <li><a href="ideas.html" data-key="ideas">Ιδέες</a></li>
  
-      <li><a href="contact.html"  data-key="ideas">Επικοινωνία</a></li>
-	<li> <a href="#our-services"  data-key="ideas">Υπηρεσίες</a></li>
+      <li><a href="contact.html"  data-key="contact">Επικοινωνία</a></li>
+	<li> <a href="#our-services"  data-key="services">Υπηρεσίες</a></li>
 
   
 
@@ -771,19 +771,7 @@ position: relative;
 
   window.addEventListener('scroll', revealOnScroll);
   window.addEventListener('load', revealOnScroll);
-
-	  const translations = {
-    en: {
-      greeting: "Welcome to our site",
-      about: "About Us",
-      contact: "Contact"
-    },
-    fr: {
-      greeting: "Bienvenue sur notre site",
-      about: "À propos",
-      contact: "Contact"
-    }
-  };
+ 
 
   const elements = document.querySelectorAll('[data-key]');
 
